@@ -3,6 +3,8 @@ rg-slider
 
 AngularJS simple range slider  directive WITHOUT jQuery dependency
 
+[**Demo**](http://manar007.github.io/rg-slider/)
+
 
 ### Installing
 ----------
