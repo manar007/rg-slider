@@ -32,7 +32,7 @@ Embed files to your html
 
 ```js
 // add 'rgSlider' as dependency to your module
-var yourModule = angular.module("yourModule", ['rgSlider']);
+var yourModule = angular.module("yourModule", ['rangeSlider']);
 ```
 
 And add the `rg-slider` directive in to your html , and assign the bound value 
