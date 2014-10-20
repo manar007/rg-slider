@@ -1,0 +1,31 @@
+.rg-active {
+    font-weight: bold;
+}
+
+.rg-tracker-with-animation {
+    -webkit-transition: left 0.2s ease-in-out;
+    -moz-transition: left 0.2s ease-in-out;
+    -o-transition: left 0.2s ease-in-out;
+    transition: left 0.2s ease-in-out;
+}
+
+.my-navigator{
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    color: blueviolet;
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+.bounded-value {
+    padding-top: 30px;
+    color:#105cb6;
+}
+.rg-demo-wrapper{
+    width: 80%;
+    margin: auto;
+}
+.rg-demo-wrapper .exp{
+    width: 100%;
+    margin: auto;
+    margin-top: 50px;
+}
