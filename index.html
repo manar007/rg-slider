@@ -2,9 +2,11 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
+    <title>AngularJS range slider</title>
+    <meta name="description" content="AngularJS range slider directive WITHOUT jQuery dependency ">
     <meta name="viewport" content="width=device-width">
+<meta name="keywords" content="AngularJs,range slider,directive,without jQuery">
+<meta name="author" content="Narek Mamikonyan">
 
     <!-- build:css(.tmp) rg-slider.min.css -->
     <link rel="stylesheet" href="styles/main.css">
@@ -21,7 +23,16 @@
 
 <div class="rg-demo-wrapper">
 
+```html 
 
+<rg-slider tracker-class="my-tracker rg-tracker-with-animation"
+                navigator-class="my-navigator"
+                bound-var="sliderValue"
+                show-navigator="true"
+                step="10"
+             ></rg-slider>
+             
+```
     <div class="exp-step" ng-if="true">
         <i>Example with step<br><br></i>
         <rg-slider tracker-class="my-tracker rg-tracker-with-animation"
