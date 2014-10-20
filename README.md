@@ -134,7 +134,7 @@ angular.controller('YourController', function($scope){
 
 ----------
 
-> **Note **
+> **Note**
 
 > **Don't use `step` and `navigatorFrom` `navigatorTo"` together it will throw an Error** 
 
