@@ -1,7 +1,7 @@
 rg-slider
 ========
 
-AngularJS simple range slider WITHOUT jQuery dependency
+AngularJS simple range slider  directive WITHOUT jQuery dependency
 
 
 ### Installing
@@ -12,10 +12,6 @@ Install via `bower`
 ```sh
 bower install rg-slider --save
 ```
-or
-
-[Download](https://github.com/manar007/rg-slider/archive/master.zip) repo and copy files from `dist` folder
-
 
 
 Embed files to your html
@@ -26,6 +22,13 @@ Embed files to your html
 <script src="bower_components/rg-slider/rg-slider.min.js"></script>
 
 ```
+
+**or**
+
+[Download](https://github.com/manar007/rg-slider/archive/master.zip) repo and copy files from `dist` folder
+
+
+
 
 ### Simple Usage
 ----------
