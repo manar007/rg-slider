@@ -1,16 +1,13 @@
 {
-  "name": "angular-range-slider",
-  "version": "0.0.0",
+  "name": "rg-slider",
+  "version": "0.1",
+  "keywords": "['angular','range-slider','slider']",
+  "main": "['dist/rg-slider.min.css','rg-slider.min.js']",
   "dependencies": {
     "angular": "~1.2.0",
     "json3": "~3.3.1",
-    "es5-shim": "~3.1.0",
-    "angular-resource": "~1.2.0",
-    "angular-cookies": "~1.2.0",
-    "angular-sanitize": "~1.2.0",
-    "angular-animate": "~1.2.0",
-    "angular-touch": "~1.2.0",
-    "angular-route": "~1.2.0"
+    "es5-shim": "~3.1.0"
+    
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0",
