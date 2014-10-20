@@ -8,7 +8,7 @@
  * you can set the bound var from you controller and when slider will change the value it will be assigned to your scope value
  * # rgSlider
  */
-angular.module('angularRangeSliderApp')
+angular.module('rangeSlider')
     .directive('rgSlider', ['$timeout', function ($timeout) {
         return {
             templateUrl: '../../views/rg-slissder.html',

@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-angular.module('angularRangeSliderApp',[])
+angular.module('rangeSlider',[])
     .run(['$templateCache',function($templateCache){
         $templateCache.put('../../views/rg-slissder.html',
                 '<div class="rg-slider">' +
