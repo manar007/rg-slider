@@ -103,7 +103,7 @@ angular.controller('YourController', function($scope){
 `step (number)`  -  Defines how many steps will have your slider. Try to provide such number which steps can be fill on your view
 
 
-> **Note **
+> **Note**
 
 > Your provided step will bound as a value to your boundVar, its mean when you providing 5 step slider, each step value which assigned to `boundVar` will be from *1 -5*. If you didnt provided the value it will be from *0-99*
 
@@ -120,7 +120,7 @@ angular.controller('YourController', function($scope){
 `navigatorFrom (number)` ; `navigatorTo(number)`  -  Defines how many steps will have your slider but with exact range
 
 
-> **Note **
+> **Note**
 
 > Your provided step will bound as a value to your boundVar, its mean when you providing `navigator-from="6"`  to `navigator-to="13"` in this case value will start from *6* and will go to *13*
 
