@@ -147,13 +147,11 @@ angular.controller('YourController', function($scope){
 - Clone project
  
 
-- ```sh
-npm install
-```
+- `npm install`
 
-- ```sh
-grunt serve
-```
+- `grunt serve`
+
+
 And do your best :)
 --------------
 
