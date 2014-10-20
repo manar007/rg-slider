@@ -17,9 +17,9 @@ bower install rg-slider --save
 Embed files to your html
 
 ```html
-<link rel="stylesheet" href="bower_components/rg-slider/rg-slider.min.css">
+<link rel="stylesheet" href="bower_components/rg-slider/dist/rg-slider.min.css">
 
-<script src="bower_components/rg-slider/rg-slider.min.js"></script>
+<script src="bower_components/rg-slider/dist/rg-slider.min.js"></script>
 
 ```
 
