@@ -153,12 +153,13 @@ angular.controller('YourController', function($scope){
  
 
 - `npm install`
-
+- `bower install`
 - `grunt serve`
+- **And do your best :)**
 
 
-And do your best :)
---------------
+
+
 
 ### TODO
 ----------
