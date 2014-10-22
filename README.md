@@ -36,7 +36,7 @@ Embed files to your html
 ----------
 
 ```js
-// add 'rgSlider' as dependency to your module
+// add 'rangeSlider' as dependency to your module
 var yourModule = angular.module("yourModule", ['rangeSlider']);
 ```
 

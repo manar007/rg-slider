@@ -1,6 +1,6 @@
 {
   "name": "rg-slider",
-  "version": "0.1",
+  "version": "v0.1",
   "keywords": ["angular","range-slider","slider"],
   "main": "['dist/rg-slider.min.css','dist/rg-slider.min.js']",
   "ignore": [
