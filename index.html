@@ -1,96 +1,183 @@
 <!doctype html>
 <html class="no-js">
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>AngularJS range slider</title>
-    <meta name="description" content="AngularJS range slider directive WITHOUT jQuery dependency ">
+    <title>AngularJS range slider without jQuery</title>
+    <meta name="description" content="AngularJS range slider without jQuery">
     <meta name="viewport" content="width=device-width">
-<meta name="keywords" content="AngularJs,range slider,directive,without jQuery">
-<meta name="author" content="Narek Mamikonyan">
+    <meta name="keywords" content="angularJs,range-slider,range slider, without jquery">
 
     <!-- build:css(.tmp) rg-slider.min.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+
+    <!-- Development css -->
     <link rel="stylesheet" href="styles/demo.css">
-    <link rel="stylesheet" href="styles/prism.css">
-  </head>
-  <body ng-app="rangeSlider">
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+
+    <!-- Development css -->
+</head>
+<body ng-app="rangeSlider">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div class="container">
+    <div class="rg-demo-wrapper row">
+        <div class="well">
+            <iframe src="http://ghbtns.com/github-btn.html?user=manar007&repo=rg-slider&type=watch&count=true"
+                    allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+
+            <iframe src="http://ghbtns.com/github-btn.html?user=manar007&repo=rg-slider&type=fork"
+                    allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+
+            <iframe src="http://ghbtns.com/github-btn.html?user=manar007&repo=rg-slider&type=follow&count=true"
+                    allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe>
+        </div>
+        <div class="jumbotron">
+            <h1>rg-slider</h1>
+
+            <p>AngularJS simple range slider directive WITHOUT jQuery dependency</p>
+
+            <p><a href="https://github.com/manar007/rg-slider/archive/master.zip" class="btn btn-primary btn-lg">Download</a>
+            </p>
+        </div>
+
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">Main features</h3>
+            </div>
+            <div class="panel-body">
+                - You don't need attach jQuery to your project
+            </div>
+            <div class="panel-body">
+                - You can easly manipulate with style by adding your own classes
+            </div>
+
+            <div class="panel-body">
+                - Small as it can ~ 3kb (JS) , ~ 1kb (CSS)
+            </div>
+
+            <div class="panel-body">
+                - Works on ie 9+ , didn't implemented with input type range which are <a
+                    href="http://caniuse.com/#search=range" target="_blank">not supported</a> by ie 9
+            </div>
+        </div>
+
+        <div class="panel panel-default" ng-if="true">
+            <div class="panel-heading"><b> Example with step</b></div>
+            <div class="panel-body">
+                <rg-slider tracker-class="my-tracker rg-tracker-with-animation"
+                           navigator-class="my-navigator"
+                           bound-var="sliderValue"
+                           show-navigator="true"
+                           step="10"></rg-slider>
+                <p>&nbsp;</p>
+                <h5><b>Slider value&nbsp;</b><span class="label label-info">{{sliderValue}}</span></h5>
+                <h5><b>Code &nbsp;</b></h5>
+                    <pre class="prettyprint linenums">
+        &lt;rg-slider
+            tracker-class="my-tracker rg-tracker-with-animation"
+            navigator-class="my-navigator"
+            bound-var="sliderValue"
+            show-navigator="true"
+            step="10"&gt;
+        &lt;&#47;rg-slider&gt; </pre>
+            </div>
+        </div>
+
+        <div class="panel panel-default" ng-if="true">
+            <div class="panel-heading"><b> Example with navigator from 4 to  16</b></div>
+            <div class="panel-body">
+                <rg-slider tracker-class="my-tracker rg-tracker-with-animation"
+                           navigator-class="my-navigator"
+                           bound-var="sliderValue"
+                           show-navigator="true"
+                           navigator-from="4"
+                           navigator-to="16"
+                        ></rg-slider>
+                <p>&nbsp;</p>
+                <h5><b>Slider value&nbsp;</b><span class="label label-info">{{sliderValue}}</span></h5>
+                <h5><b>Code &nbsp;</b></h5>
+                    <pre class="prettyprint linenums">
+        &lt;rg-slider
+            tracker-class="my-tracker rg-tracker-with-animation"
+            navigator-class="my-navigator"
+            bound-var="sliderValue"
+            show-navigator="true"
+            navigator-from="4"
+            navigator-to="16"&gt;
+        &lt;&#47;rg-slider&gt; </pre>
+            </div>
+        </div>
+
+        <div class="panel panel-default" ng-if="true">
+            <div class="panel-heading"><b> Example without navigator and step</b></div>
+            <div class="panel-body">
+                <rg-slider tracker-class="my-tracker rg-tracker-with-animation"
+                           navigator-class="my-navigator"
+                           bound-var="sliderValue"
+
+                        ></rg-slider>
+                <p>&nbsp;</p>
+                <h5><b>Slider value&nbsp;</b><span class="label label-info">{{sliderValue}}</span></h5>
+                <h5><b>Code &nbsp;</b></h5>
+                    <pre class="prettyprint linenums">
+        &lt;rg-slider
+            tracker-class="my-tracker rg-tracker-with-animation"
+            navigator-class="my-navigator"
+            bound-var="sliderValue"&gt;
+        &lt;&#47;rg-slider&gt; </pre>
+            </div>
+        </div>
+        <div class="panel panel-default" ng-if="true">
+            <div class="panel-heading"><b> Example without navigator but with steps</b></div>
+            <div class="panel-body">
+                <rg-slider tracker-class="my-tracker rg-tracker-with-animation"
+                           navigator-class="my-navigator"
+                           bound-var="sliderValue"
+                           step="15"
+                        ></rg-slider>
+                <p>&nbsp;</p>
+                <h5><b>Slider value&nbsp;</b><span class="label label-info">{{sliderValue}}</span></h5>
+                <h5><b>Code &nbsp;</b></h5>
+                    <pre class="prettyprint linenums">
+        &lt;rg-slider
+            tracker-class="my-tracker rg-tracker-with-animation"
+            navigator-class="my-navigator"
+            bound-var="sliderValue"
+            step="15"&gt;
+        &lt;&#47;rg-slider&gt; </pre>
+            </div>
+        </div>
 
 
-
-
-<div class="rg-demo-wrapper">
-
-
- 
-
-    <div class="exp-step" ng-if="true">
-        <i>Example with step<br><br></i>
-        <rg-slider tracker-class="my-tracker rg-tracker-with-animation"
-                navigator-class="my-navigator"
-                bound-var="sliderValue"
-                show-navigator="true"
-                step="10"
-             ></rg-slider>
-   
-    <p class="bounded-value">Slider value: <b> {{sliderValue}}</b></p>
-    </div>
-
-    <div class="exp-step" ng-if="true">
-        <i>Example with navigator from / to <br><br></i>
-        <rg-slider tracker-class="my-tracker rg-tracker-with-animation"
-                   navigator-class="my-navigator"
-                   bound-var="sliderValue"
-                   show-navigator="true"
-                   navigator-from="4"
-                   navigator-to="16"
-                ></rg-slider>
-
-        <p class="bounded-value">Slider value: <b> {{sliderValue}}</b></p>
-    </div>
-
-    <div class="exp-step" ng-if="true">
-        <i>Example without navigator and step <br><br></i>
-        <rg-slider tracker-class="my-tracker rg-tracker-with-animation"
-                   navigator-class="my-navigator"
-                   bound-var="sliderValue"
-
-                ></rg-slider>
-
-        <p class="bounded-value">Slider value: <b> {{sliderValue}}</b></p>
-    </div>
-
-    <div class="exp-step" ng-if="true">
-        <i>Example without navigator with step <br><br></i>
-        <rg-slider tracker-class="my-tracker rg-tracker-with-animation"
-                   navigator-class="my-navigator"
-                   bound-var="sliderValue"
-                   step="15"
-                ></rg-slider>
-
-        <p class="bounded-value">Slider value: <b> {{sliderValue}}</b></p>
     </div>
 </div>
 
 
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.js"></script>
-    <![endif]-->
+</div>
+</div>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js"></script>
-  
-    <script src="prism.js"></script>
-
+<!--[if lt IE 9]>
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+<script src="bower_components/json3/lib/json3.js"></script>
+<![endif]-->
 
 
-        <!-- build:js({.tmp,app}) rg-slider.min.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/directives/rgslider.js"></script>
-        <!-- endbuild -->
+<script src="bower_components/angular/angular.js"></script>
 
-  </body>
+
+<!-- Development js-->
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=sons-of-obsidian"></script>
+<!-- Development js-->
+
+
+<!-- build:js({.tmp,app}) rg-slider.min.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/directives/rgslider.js"></script>
+<!-- endbuild -->
+
+</body>
 </html>
