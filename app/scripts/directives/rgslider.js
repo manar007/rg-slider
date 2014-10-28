@@ -33,7 +33,8 @@ angular.module('rangeSlider')
                     selectedStep,
                     positionWatcher,
                     trackerWidth,
-                    STEP_DIFFERENCE = 1;
+                    STEP_DIFFERENCE = 1,
+                    wrapperOfssetLeft = wrapper.getBoundingClientRect().left;
 
                 /**
                  * @description finds element by given classname inside the dom list of givent element
@@ -92,7 +93,7 @@ angular.module('rangeSlider')
                  * @param event
                  */
                 function mouseMoveHandler(event) {
-                    curX = event.x - wrapper.offsetLeft;
+                    curX = event.x - wrapperOfssetLeft;
                     if (positionWatcher) {
                         slideTracker();
                     }
