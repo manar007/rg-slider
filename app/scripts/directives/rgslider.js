@@ -2,7 +2,7 @@
 angular.module('rangeSlider')
   .directive('rgSlider', ['$timeout', function ($timeout) {
     return {
-      templateUrl: '../../views/rg-slissder.html',
+      templateUrl: '../../views/rg-slider.html',
       restrict: 'E',
       scope: {
         trackerClass:   '@',
@@ -28,7 +28,7 @@ angular.module('rangeSlider')
           wrapperOfssetLeft = wrapper.firstChild.getBoundingClientRect().left;
 
         /**
-         * @description finds element by given classname inside the dom list of givent element
+         * @description finds element by given classname inside the dom list of given element
          * NOTE its will return only one element
          * @param element <HTMLElement>
          * @param className <String>
@@ -63,7 +63,7 @@ angular.module('rangeSlider')
         }
 
         tracker = getElementByClassName(element[0], 'rg-tracker');
-        rgSliderWrapper  = getElementByClassName(element[0], 'rg-slider-wrapper');
+        rgSliderWrapper = getElementByClassName(element[0], 'rg-slider-wrapper');
         trackerWidth = tracker.clientWidth;
         function startUpdatingTracker() {
           positionWatcher = true;
@@ -122,8 +122,8 @@ angular.module('rangeSlider')
           // set current step in curValue
           scope.curValue = scope.navList[rounded];
           // if the value is last value then set it
-          if(goTo === 100) {
-            scope.curValue = scope.navList[rounded -1] + 1;
+          if (goTo === 100) {
+            scope.curValue = scope.navList[rounded - 1] + 1;
           }
 
           return goTo;
@@ -178,7 +178,7 @@ angular.module('rangeSlider')
         function generateNavigatorList() {
           scope.navigatorFrom = parseInt(scope.navigatorFrom, 10);
           scope.navigatorTo = parseInt(scope.navigatorTo, 10);
-          var navList = [], i,length = totalSteps + scope.navigatorFrom - STEP_DIFFERENCE;
+          var navList = [], i, length = totalSteps + scope.navigatorFrom - STEP_DIFFERENCE;
           // Generate error when navigatorFrom > navigatorTo
           if (scope.navigatorFrom > scope.navigatorTo) {
             throw new Error('navigatorFrom: ' + scope.navigatorFrom + ' must be lower than navigatorTo: ' + scope.navigatorTo);
@@ -198,7 +198,6 @@ angular.module('rangeSlider')
          * - Generate needed variables
          */
         function init() {
-
           scope.$on('$destroy', removeEventListeners);
           initEventListeners();
           selectedStep = 0;
@@ -219,15 +218,16 @@ angular.module('rangeSlider')
 
           }
           // if we total steps then set ul>li's exact width
-          if(totalSteps) {
-            scope.listItemWidth =  Math.round((rgSliderWrapper.clientWidth * (100 / totalSteps))/100) + 'px';
+          if (totalSteps) {
+            scope.listItemWidth = Math.round((rgSliderWrapper.clientWidth * (100 / totalSteps)) / 100) + 'px';
             // Set first value as current value
 
           }
-          $timeout(function(){
+          $timeout(function () {
             scope.curValue = (totalSteps) ? scope.navList[0] : 0;
             updateBoundVar();
-          },100);
+          }, 100);
+
 
         }
 
