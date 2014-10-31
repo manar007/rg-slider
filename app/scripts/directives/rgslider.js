@@ -84,7 +84,7 @@ angular.module('rangeSlider')
          * @param event
          */
         function mouseMoveHandler(event) {
-          curX = event.x - wrapperOfssetLeft;
+          curX = event.pageX - wrapperOfssetLeft;
           if (positionWatcher) {
             slideTracker();
           }
