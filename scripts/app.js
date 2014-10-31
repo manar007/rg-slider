@@ -10,7 +10,7 @@
  */
 angular.module('rangeSlider',[])
     .run(['$templateCache',function($templateCache){
-        $templateCache.put('../../views/rg-slissder.html',
+        $templateCache.put('../../views/rg-slider.html',
                 '<div class="rg-slider">' +
                      '<div class="rg-slider-wrapper"> ' +
                         '<div class="rg-slider-trackbar" ng-class="trackBarClass">' +
