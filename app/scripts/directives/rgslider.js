@@ -1,6 +1,6 @@
 'use strict';
 angular.module('rangeSlider')
-  .directive('rgSlider', ['$timeout', function ($timeout) {
+  .directive('rgSlider', [function () {
     return {
       templateUrl: '../../views/rg-slider.html',
       restrict: 'E',
@@ -93,8 +93,9 @@ angular.module('rangeSlider')
         /**
          * @description Calculate the position of tracker, where he must go and return
          * @returns {number}
+         * @param {number} currentStep is the boundVar value, if it defined we calculating with exact step
          */
-        function getExpectedPosition() {
+        function getExpectedPosition(currentStep) {
           var goTo = ((100 * (curX - trackerWidth)) / rgSliderWrapper.clientWidth),
             availableWidth = 100 - ((100 * trackerWidth) / rgSliderWrapper.clientWidth);
           // to not get negative value
@@ -104,19 +105,20 @@ angular.module('rangeSlider')
           scope.curValue = Math.round(goTo);
           // if setted step go calculate exact step
           if (totalSteps) {
-            goTo = calculateByStep(goTo);
+            goTo = calculateByStep(goTo,currentStep);
           }
           return (goTo <= availableWidth) ? goTo : availableWidth;
         }
 
         /**
          * @description Calculate position of tracker depended on step / if step enabled
-         * @param value
+         * @param {number} value
+         * @param {number} currentStep
          * @returns {number}
          */
-        function calculateByStep(value) {
+        function calculateByStep(value, currentStep) {
           var eachStep = 100 / totalSteps,
-            rounded = Math.round(value / eachStep),
+            rounded = (value)? Math.round(value / eachStep) : currentStep,
             goTo = Math.floor(rounded * eachStep);
 
           // set current step in curValue
@@ -133,7 +135,7 @@ angular.module('rangeSlider')
          * @description Fire watchers and update boundVar value
          */
         function updateBoundVar() {
-          scope.$apply(function () {
+          scope.$evalAsync(function (scope) {
             scope.boundVar = scope.curValue;
           });
         }
@@ -141,8 +143,8 @@ angular.module('rangeSlider')
         /**
          * @description Render tracker and update boundVar
          */
-        function slideTracker() {
-          tracker.style.left = getExpectedPosition() + '%';
+        function slideTracker(currentStep) {
+          tracker.style.left = getExpectedPosition(currentStep) + '%';
           updateBoundVar();
         }
 
@@ -223,11 +225,15 @@ angular.module('rangeSlider')
             // Set first value as current value
 
           }
-          $timeout(function () {
-            scope.curValue = (totalSteps) ? scope.navList[0] : 0;
-            updateBoundVar();
-          }, 100);
+          // check if boundVar has value tick the tracker to that value, if not assign first value to boundVar
+          if(scope.boundVar){
+            slideTracker(scope.boundVar - STEP_DIFFERENCE);
+          }
+          else{
+              scope.curValue = (totalSteps) ? scope.navList[0] : 0;
+              updateBoundVar();
 
+          }
 
         }
 
