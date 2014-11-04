@@ -85,6 +85,7 @@ angular.module('rangeSlider')
          */
         function mouseMoveHandler(event) {
           curX = event.pageX - wrapperOfssetLeft;
+          //console.log(curX);
           if (positionWatcher) {
             slideTracker();
           }
@@ -102,11 +103,13 @@ angular.module('rangeSlider')
           if (goTo < 0) {
             goTo = 0;
           }
+
           scope.curValue = Math.round(goTo);
           // if setted step go calculate exact step
           if (totalSteps) {
             goTo = calculateByStep(goTo,currentStep);
           }
+
           return (goTo <= availableWidth) ? goTo : availableWidth;
         }
 
@@ -118,9 +121,8 @@ angular.module('rangeSlider')
          */
         function calculateByStep(value, currentStep) {
           var eachStep = 100 / totalSteps,
-            rounded = (value)? Math.round(value / eachStep) : currentStep,
+            rounded = (value >= 0) ? Math.round(value / eachStep) : currentStep,
             goTo = Math.floor(rounded * eachStep);
-
           // set current step in curValue
           scope.curValue = scope.navList[rounded];
           // if the value is last value then set it
@@ -227,7 +229,7 @@ angular.module('rangeSlider')
           }
           // check if boundVar has value tick the tracker to that value, if not assign first value to boundVar
           if(scope.boundVar){
-            slideTracker(scope.boundVar - STEP_DIFFERENCE);
+             slideTracker(scope.boundVar);
           }
           else{
               scope.curValue = (totalSteps) ? scope.navList[0] : 0;
