@@ -196,6 +196,36 @@ angular.module('rangeSlider')
         }
 
         /**
+         * @description Set tracker position / if we have default value in boundVar slide to it, if not set first element from nav list
+         */
+        function setTracker() {
+          // Update value in curValue and skip rest because we don't have navigation list
+          if (!angular.isArray(scope.navList)) {
+            setCurrentValue();
+            return;
+          }
+
+          var index = scope.navList.indexOf(scope.boundVar);
+
+          if (index !== -1) {
+            slideTracker(index);
+          }
+          else {
+            setCurrentValue();
+          }
+        }
+
+        /**
+         * @description Set current value to bound var and call $digest
+         */
+        function setCurrentValue() {
+          scope.curValue = (totalSteps) ? scope.navList[0] : 0;
+          updateBoundVar();
+        }
+
+
+
+        /**
          * @description Main initialization function which will be called when directive is initialized
          * - Register watchers and event Listeneres
          * - Check provided scope variables
@@ -227,15 +257,8 @@ angular.module('rangeSlider')
             // Set first value as current value
 
           }
-          // check if boundVar has value tick the tracker to that value, if not assign first value to boundVar
-          if(scope.boundVar){
-             slideTracker(scope.boundVar);
-          }
-          else{
-              scope.curValue = (totalSteps) ? scope.navList[0] : 0;
-              updateBoundVar();
 
-          }
+          setTracker();
 
         }
 
